@@ -1,0 +1,50 @@
+array (
+  'params' => 
+  array (
+    'method' => 'tasks.task.list',
+    'params' => 
+    array (
+      'order' => 
+      array (
+        'GROUP_ID' => 'asc',
+      ),
+      'filter' => 
+      array (
+        '<=DEADLINE' => '2021-2-31',
+        '<=REAL_STATUS' => 4,
+        'TITLE' => '%ТП:%',
+      ),
+      'select' => 
+      array (
+        0 => 'ID',
+        1 => 'TITLE',
+        2 => 'DESCRIPTION',
+        3 => 'STATUS',
+        4 => 'NOT_VIEWED',
+        5 => 'GROUP_ID',
+        6 => 'STAGE_ID',
+        7 => 'CREATED_BY',
+        8 => 'CREATED_DATE',
+        9 => 'RESPONSIBLE_ID',
+        10 => 'ACCOMPLICES',
+        11 => 'AUDITORS',
+        12 => 'CHANGED_BY',
+        13 => 'CHANGED_DATE',
+        14 => 'STATUS_CHANGED_DATE',
+        15 => 'CLOSED_BY',
+        16 => 'CLOSED_DATE',
+        17 => 'DATE_START',
+        18 => 'DEADLINE',
+        19 => 'END_DATE_PLAN',
+        20 => 'NEW_COMMENTS_COUNT',
+        21 => 'TASK_CONTROL',
+        22 => 'TIME_ESTIMATE',
+        23 => 'TIME_SPENT_IN_LOGS',
+        24 => 'DURATION_PLAN',
+        25 => 'DURATION_FACT',
+        26 => 'UF_AUTO_764963900303',
+        27 => 'UF_AUTO_817165109357',
+      ),
+    ),
+  ),
+)
