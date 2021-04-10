@@ -110,6 +110,9 @@
 			this.arrTargetProperty = arrTargetProperty; // целевое свойство для калькуляции сейчас ['durationfact', 'durationPlan','timeEstimate']
 		}
 
+		/**
+		 * Получить список задач по фильтру
+		 */
 		async getTasks() {
 			let bx24 = new BX24Wrapper();
 			bx24.progress = percent => console.log(`progress: ${percent}%`);
