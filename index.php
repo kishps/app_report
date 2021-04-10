@@ -155,7 +155,6 @@
 			}
 		}
 
-
 		addTaskInStucture(params) {
 			/*addElementInStucture({
 					groupFor: paramGrouping,
