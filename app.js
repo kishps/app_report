@@ -120,7 +120,7 @@ class DataStructure {
                 paramGrouping = `${this.dataGrouping.default}-${this._arrTasks[taskItem][this.dataGrouping.default]}`;
             }
 
-            this.addElementInStucture({
+            this.addTaskInStucture({
                 groupFor: paramGrouping,
                 task: this._arrTasks[taskItem]
             });
@@ -128,7 +128,7 @@ class DataStructure {
     }
 
     addTaskInStucture(params) {
-        /*addElementInStucture({
+        /*addTaskInStucture({
                 groupFor: paramGrouping,
                 task: this._arrTasks[taskItem]
         });
