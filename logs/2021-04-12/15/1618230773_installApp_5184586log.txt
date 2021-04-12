@@ -1,0 +1,20 @@
+array (
+  'request' => 
+  array (
+    'DOMAIN' => 'csn.bitrix24.ru',
+    'PROTOCOL' => '1',
+    'LANG' => 'ru',
+    'APP_SID' => 'a5b02dc9ac7ff65f41e44e5a195c018f',
+    'AUTH_ID' => '044c746000537ff8000017b00000071b0000031c349d0cf7a5cb357a1b53ff241f7579',
+    'AUTH_EXPIRES' => '3600',
+    'REFRESH_ID' => 'f4ca9b6000537ff8000017b00000071b000003e79688b23751973acbd99e781845a505',
+    'member_id' => 'beb1ce802d705b204b4ee2197bf6e7bb',
+    'status' => 'L',
+    'PLACEMENT' => 'DEFAULT',
+  ),
+  'result' => 
+  array (
+    'rest_only' => false,
+    'install' => false,
+  ),
+)
