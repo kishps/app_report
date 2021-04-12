@@ -120,7 +120,11 @@ class DataStructure {
                 paramGrouping = `${this.dataGrouping.default}-${this._arrTasks[taskItem][this.dataGrouping.default]}`;
             }
 
+<<<<<<< HEAD
             this.addTaskInStucture({
+=======
+            this.addElementInStucture({
+>>>>>>> 089cde560e80b21bced59f822a9702c6a77781fc
                 groupFor: paramGrouping,
                 task: this._arrTasks[taskItem]
             });
@@ -128,7 +132,11 @@ class DataStructure {
     }
 
     addTaskInStucture(params) {
+<<<<<<< HEAD
         /*addTaskInStucture({
+=======
+        /*addElementInStucture({
+>>>>>>> 089cde560e80b21bced59f822a9702c6a77781fc
                 groupFor: paramGrouping,
                 task: this._arrTasks[taskItem]
         });
