@@ -267,9 +267,11 @@
             let containerAdd = this._containerAdd;
             $(this._buttonAdd).click(function() {
                 $(containerAdd).append(`<div class='field-item new-item'>
-                                                <select class="select-item new-item"></select>
+                                                <select class="select-item" data-new="y"></select>
                                             </div>`);
             });
+            console.log('select[data-new="y"]', $('select[data-new="y"]'));
+            console.log('select[data-new="y"]', $('select[data-new="y"]'));
         }
 
         async getTaskFields() {
@@ -284,11 +286,15 @@
             let filterFields = this.filterFields;
 
             for (let fieldItem in filterFields) {
-                console.log('fieldItem', fieldItem);
+                
                 let titleField = (filterFields[fieldItem].title) ? filterFields[fieldItem].title : fieldItem;
-                $('.select-item.new-item').append(`<option value="${fieldItem}">${titleField}</option>`);
-                $('.select-item.new-item').change(function() {
+                console.log('titleField', titleField);
+                console.log('select[data-new="y"]', $('select[data-new="y"]'));
+                $('select[data-new="y"]').append(`<option value="${fieldItem}">${titleField}</option>`);
+                $('select[data-new="y"]').change(function() {
+
                     $('.field-item.new-item').append(`<div data-field-code="${$(this).val()}" class="fieldVal"></div>`);
+
                     switch (filterFields[fieldItem].type) {
                         case 'enum':
                             $(`div[data-field-code="${$(this).val()}"]`).html(`<div>TITLE: ${filterFields[fieldItem].title}<br>CODE: ${fieldItem}</div><select class="field-select-values" data-field-code="${$(this).val()}"></select>`);
@@ -368,6 +374,7 @@
 
         });
         $('#push').click();
+        
     });
 </script>
 
