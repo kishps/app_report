@@ -9,7 +9,7 @@
     <script src="bx24-wrapper.js"></script>
     <script src="DataStructure.js?v=1"></script>
     <script src="FilterTasks.js"></script>
-    <script src="init.js?v=1"></script>
+    <script src="init.js?v=2"></script>
     <link rel="stylesheet" href="./style.css">
     <?php
     require_once(__DIR__ . '/crestcurrent.php');

@@ -26,13 +26,19 @@ $(document).ready(function () {
 
 
     function groupsDescrPrepare(grops,taskkGroups) {
+        taskkGroups.total.timeTariff = 0;
         let arrGroupsDescr = grops.map(gr => [prepare(gr.DESCRIPTION), gr.ID]).map(function(el){
             if (Object.keys(el[0]).length==1) {
                 //console.log('el[0]', el[0]);
                 taskkGroups[`groupId-${el[1]}`].timeTariff = Object.values(el[0])[0]*60;
+                taskkGroups.total.timeTariff = taskkGroups.total.timeTariff + Object.values(el[0])[0]*60;
             } else if (Object.keys(el[0]).length > 1) {
                 Object.keys(el[0]).map(function(con){
-                    if (taskkGroups[con]) taskkGroups[con].timetariff = el[0][con]*60;
+                    if (taskkGroups[con]) {
+
+                        taskkGroups[con].timetariff = el[0][con]*60;
+                        taskkGroups.total.timeTariff = taskkGroups.total.timeTariff + el[0][con]*60;;
+                    } 
                 });
                 
             }
