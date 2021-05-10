@@ -120,6 +120,8 @@ class DataStructure {
         if (!(this._resultData.groups[groupFor])) {
             this._resultData.groups[groupFor] = {};
             this._resultData.groups[groupFor]['count'] = 1;
+            this._resultData.groups[groupFor]['id'] = task.group.id;
+            this._resultData.groups[groupFor]['name'] = task.group.name;
             if (this.arrTargetProperty) {
                 for (let property of this.arrTargetProperty) {
                     this._resultData.groups[groupFor][property] = (task[property]) ? parseInt(task[property]) : 0;

@@ -1,4 +1,45 @@
 $(document).ready(function () {
+    function prepare(strr) {
+        let arrDescr = [];
+        strr.split(')').map(element => element.split('(')).map(el => el.map(function (ell) {
+            if ((ell.includes('|'))) arrDescr.push(ell);
+        }))
+        let objResult = {};
+        let res = arrDescr.map(function (ele) {
+            //console.log('ele', ele);
+            return ele.split(' ');
+        }).map(function (el1) {
+            let hours, contract;
+            el1.map(function (el2) {
+
+                if (el2.includes(':')) {
+                    hours = el2.slice(el2.indexOf(':') + 1);
+                } else if (el2.includes('-')) {
+                    contract = el2;
+                }
+            });
+            objResult[contract] = hours;
+        });
+
+        return objResult;
+    }
+
+
+    function groupsDescrPrepare(grops,taskkGroups) {
+        let arrGroupsDescr = grops.map(gr => [prepare(gr.DESCRIPTION), gr.ID]).map(function(el){
+            if (Object.keys(el[0]).length==1) {
+                //console.log('el[0]', el[0]);
+                taskkGroups[`groupId-${el[1]}`].timeTariff = Object.values(el[0])[0]*60;
+            } else if (Object.keys(el[0]).length > 1) {
+                Object.keys(el[0]).map(function(con){
+                    if (taskkGroups[con]) taskkGroups[con].timetariff = el[0][con]*60;
+                });
+                
+            }
+        });
+       
+        return taskkGroups;
+    }
 
     (async () => {
         let i = new DataStructure('task');
@@ -30,28 +71,30 @@ $(document).ready(function () {
         ]);
         let taskk = await i.getTasks();
         console.log('taskk', taskk);
-        await i.setOption({
+        /* await i.setOption({
             'data': 'value',
             'data2': 'value2',
-        });
+        }); */
+        let arrGroupsId = Object.values(taskk.groups).map(group => group.id); console.log('arrGroupsId', arrGroupsId);
         let grops = await i.getSoNetGroups({
             'ORDER': {
                 'NAME': 'ASC'
             },
             'FILTER': {
+                'ID': arrGroupsId
             },
             'IS_ADMIN': 'Y'
         });
-        console.log('grops', grops);
+        console.log(groupsDescrPrepare(grops,taskk.groups));
 
-        await i.getOption();
-        await i.getLists({
+        /* await i.getOption(); */
+        /* await i.getLists({
             'IBLOCK_TYPE_ID': 'lists',
             'IBLOCK_ID': 124
-        });
+        }); */
 
     })().catch(error => console.log('Error:', error));
 
 
 });
-    
+

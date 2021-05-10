@@ -9,7 +9,7 @@
     <script src="bx24-wrapper.js"></script>
     <script src="DataStructure.js?v=1"></script>
     <script src="FilterTasks.js"></script>
-    <script src="init.js"></script>
+    <script src="init.js?v=1"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 
