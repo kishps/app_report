@@ -93,7 +93,7 @@ class DataStructure {
             } else {
                 paramGrouping = `${this.dataGrouping.default}-${this._arrTasks[taskItem][this.dataGrouping.default]}`;
             }
-
+            this._arrTasks[taskItem].timeEstimate = this._arrTasks[taskItem].timeEstimate/60;  //преобразование из секунд в минуты
             this.addTaskInStucture({
                 groupFor: paramGrouping,
                 task: this._arrTasks[taskItem]
