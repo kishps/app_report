@@ -38,7 +38,7 @@ class DataStructure {
     }
 
     setSourseGroups(sourseGroups) {
-        this.setSourseGroups = sourseGroups; //источник настроек сейчас 'description'
+        this.sourseGroups = sourseGroups; //источник настроек сейчас 'description'
     }
 
     setDataGrouping(dataGrouping) {
@@ -166,6 +166,8 @@ class DataStructure {
         }
     }
 
+
+    /**получить списки */
     async getLists(params) {
         let bx24 = new BX24Wrapper();
         bx24.progress = percent => console.log(`progress: ${percent}%`);
@@ -182,7 +184,7 @@ class DataStructure {
     }
 
     /**
-     * Получить список групп4
+     * Получить список групп
      */
     async getSoNetGroups(params) {
         let bx24 = new BX24Wrapper();
