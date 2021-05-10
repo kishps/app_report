@@ -45,6 +45,8 @@ class DataStructure {
         this.dataGrouping = dataGrouping; //группировка сейчас  {default: 'groupId',groupingUf: 'ufAuto764963900303'}
     }
 
+
+    
     setArrTargetProperty(arrTargetProperty) {
         this.arrTargetProperty = arrTargetProperty; // целевое свойство для калькуляции сейчас ['durationfact', 'durationPlan','timeEstimate']
     }
@@ -180,7 +182,7 @@ class DataStructure {
     }
 
     /**
-     * Получить список групп
+     * Получить список групп4
      */
     async getSoNetGroups(params) {
         let bx24 = new BX24Wrapper();
