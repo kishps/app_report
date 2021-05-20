@@ -1,9 +1,0 @@
-array (
-  'params' => 
-  array (
-    'method' => 'tasks.task.getFields',
-    'params' => 
-    array (
-    ),
-  ),
-)

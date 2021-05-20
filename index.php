@@ -3,14 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Quick start. Local server-side application with UI</title>
+    <title>Quick start. Local server-side application with UI</title> 
     <script src="/bitrix/js/main/jquery/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="//api.bitrix24.com/api/v1/"></script>
     <script src="bx24-wrapper.js"></script>
     <script src="DataStructure.js?v=1"></script>
     <script src="FilterTasks.js"></script>
-    <script src="init.js?v=2"></script>
+    <script src="report.js?v=2.1"></script>
+    <script src="init.js?v=4"></script>
     <link rel="stylesheet" href="./style.css">
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <?php
     require_once(__DIR__ . '/crestcurrent.php');
     require_once(__DIR__ . '/getTasks.php');
@@ -55,8 +59,8 @@
             <!--  <select class='js-add-task-filter'></select>
             <article class='field-task-filter'></article> -->
         </aside>
-
-
+        <article class="report-table">
+        </article>
     </main>
 </body>
 

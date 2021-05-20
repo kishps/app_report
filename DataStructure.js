@@ -51,6 +51,12 @@ class DataStructure {
         this.arrTargetProperty = arrTargetProperty; // целевое свойство для калькуляции сейчас ['durationfact', 'durationPlan','timeEstimate']
     }
 
+    //** получить последний день месяца */
+    lastDayOfMounth(params) {
+        let dateYm = new Date(params.year, params.mounth, 0).getDate();
+        return dateYm;
+    }
+
 
     /**
      * Получить список задач с заданным фильтром
@@ -91,6 +97,7 @@ class DataStructure {
             if (this._arrTasks[taskItem][this.dataGrouping.groupingUf]) {
                 paramGrouping = this._arrTasks[taskItem][this.dataGrouping.groupingUf];
             } else {
+                if (this._arrTasks[taskItem][this.dataGrouping.default] == 0) continue;
                 paramGrouping = `${this.dataGrouping.default}-${this._arrTasks[taskItem][this.dataGrouping.default]}`;
             }
             this._arrTasks[taskItem].timeEstimate = this._arrTasks[taskItem].timeEstimate/60;  //преобразование из секунд в минуты

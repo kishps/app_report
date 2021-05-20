@@ -1,3 +1,11 @@
 .field-item {
     display: none;
 }
+
+.infobar > div {
+    display: inline-block;
+    margin: 10px 5px;
+}
+.group-name {
+    font-weight: bold;
+}
