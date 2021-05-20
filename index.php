@@ -8,9 +8,9 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="//api.bitrix24.com/api/v1/"></script>
     <script src="bx24-wrapper.js"></script>
-    <script src="DataStructure.js?v=1"></script>
+    <script src="DataStructure.js?v=2"></script>
     <script src="FilterTasks.js"></script>
-    <script src="report.js?v=2.1"></script>
+    <script src="https://csn.insystema.ru/app/report.js?v=4"></script>
     <script src="init.js?v=4"></script>
     <link rel="stylesheet" href="./style.css">
     

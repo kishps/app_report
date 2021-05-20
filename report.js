@@ -2,8 +2,16 @@ class ReportTable {
 
     selector = '.report-table'; //контейнер отчета
 
+    objShowFields = {title:"Задача",durationFact:"Затраченное время", closedDate:'дата закрытия'};
+
     constructor(selector) {
         if (selector) this.selector = selector; // контейнер отчета
+    }
+
+
+    setShowFields(params) {
+        this.objShowFields = params;
+
     }
 
 
@@ -23,6 +31,7 @@ class ReportTable {
     }
 
     minToHour(time) {
+        if (!time) return '0 м';
         let h = time / 60 ^ 0;
         if (h) {
             let m = time % 60;
@@ -142,29 +151,64 @@ class ReportTable {
                 </div>`;
     }
 
-    detailInfo(groupKey) {
-        return `<div class="table">
-        <table data-id="${arrFact[element].ID}">
-            <thead>
-                <td>
-                    Задача
-                </td>
-                <td>
-                    Сделка
-                </td>
-                <td>
-                    Дата закрытия
-                </td>
-                <td>
-                    Группа товаров
-                </td>
-                <td>
-                    Сумма
-                </td>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-        <div>`;
+    getTbody(groupKey) {
+        let arrTasksGroup = this.tasks[groupKey];
+        console.log('arrTasksGroup',arrTasksGroup);
+        let arrTd='';
+        let objShowFields = this.objShowFields;
+        arrTasksGroup.map((task) => {   
+                                        arrTd += '<tr>';
+                                        Object.keys(objShowFields).map((field) => {
+                                            let td;
+                                            switch(field){
+                                                case 'title':
+                                                  td = `<td data-field="${field}"><a target="_blank" href="https://csn.bitrix24.ru/workgroups/group/${task.group.id}/tasks/task/view/${task.id}/">${task[field]}</a></td>`;
+                                                  break;
+                                                case 'durationFact':
+                                                case 'durationPlan':
+                                                case 'timeEstimate':
+                                                  td = `<td data-field="${field}">${this.minToHour(task[field])}</td>`;
+                                                  break;
+                                                case 'changedDate':
+                                                case 'closedDate':
+                                                case 'createdDate':
+                                                case 'deadline':
+                                                case 'statusChangedDate':
+                                                case 'viewedDate':
+                                                    td = `<td data-field="${field}">${new Date(task[field]).toLocaleDateString()}</td>`;
+                                                  break;
+                                                default:
+                                                    td = `<td data-field="${field}">${task[field]}</td>`;
+                                              }
+                                            arrTd += td;
+                                            });
+                                        arrTd += '</tr>';
+                                    });
+        return arrTd+'';
     }
+
+    getThead() {
+        let arrTh='';
+        let objShowFields = this.objShowFields;
+        Object.keys(objShowFields).map((field) => {arrTh +=`
+                                                            <th data-field="${field}">${objShowFields[field]}</th>`});
+        return arrTh;
+    }
+
+    detailInfo(groupKey) {
+        let tbody= this.getTbody(groupKey);
+        let thead = this.getThead();
+        return `<div class="table">
+                    <table data-id="${groupKey}">
+                        <thead>
+                            ${thead}
+                        </thead>
+                        <tbody>
+                            ${tbody}
+                        </tbody>
+                    </table>
+                <div>`;
+    }
+
+
 }
