@@ -64,25 +64,44 @@ $(document).ready(function () {
 
         let lastDay = i.lastDayOfMounth({year: year, mounth:mounth})
 
-        i.setArrFilters({ // три фильтра для задач
-            0: { // текущие
-                ">=DEADLINE": `${year}-${mounth}-01`,
-                "<=DEADLINE": `${year}-${mounth}-${lastDay}`,
-                "<=REAL_STATUS": 4,
-                TITLE: "%ТП:%"
+        let today = new Date();
+        if (today.getMonth()+1 == mounth && today.getFullYear()==year) {
+            i.setArrFilters({ // три фильтра для задач
+                0: { // текущие
+                    "<=DEADLINE": `${year}-${mounth}-${lastDay}`,
+                    "<=REAL_STATUS": 4,
+                    TITLE: "%ТП:%"
+    
+                },
+                1: { //закрытые
+                    ">=CLOSED_DATE": `${year}-${mounth}-01`,
+                    "<=CLOSED_DATE": `${year}-${mounth}-${lastDay}`,
+                    "UF_AUTO_817165109357": '',
+                    "!REAL_STATUS": 4,
+                    TITLE: "%ТП:%"
+                },
+                3: { //закрытые в другом месяце
+                    "UF_AUTO_817165109357": `${year}-${mounth}`,
+                    TITLE: "%ТП:%"
+                }
+            });
+        } else {
+            i.setArrFilters({ // два фильтра для задач
+                0: { //закрытые
+                    ">=CLOSED_DATE": `${year}-${mounth}-01`,
+                    "<=CLOSED_DATE": `${year}-${mounth}-${lastDay}`,
+                    "UF_AUTO_817165109357": '',
+                    "!REAL_STATUS": 4,
+                    TITLE: "%ТП:%"
+                },
+                1: { //закрытые в другом месяце
+                    "UF_AUTO_817165109357": `${year}-${mounth}`,
+                    TITLE: "%ТП:%"
+                }
+            });
+        }
 
-            },
-            1: { //закрытые
-                ">=CLOSED_DATE": `${year}-${mounth}-01`,
-                "<=CLOSED_DATE": `${year}-${mounth}-${lastDay}`,
-                "UF_AUTO_817165109357": '',
-                TITLE: "%ТП:%"
-            },
-            3: { //закрытые в другом месяце
-                "UF_AUTO_817165109357": `${year}-${mounth}`,
-                TITLE: "%ТП:%"
-            }
-        });
+        
         i.setArrSelect([ //доступные поля
             'ID', 'TITLE', 'DESCRIPTION', 'STATUS', 'NOT_VIEWED', 'GROUP_ID', 'STAGE_ID', 'CREATED_BY',
             'CREATED_DATE', 'RESPONSIBLE_ID', 'ACCOMPLICES', 'AUDITORS', 'CHANGED_BY', 'CHANGED_DATE', 'REAL_STATUS',
@@ -145,13 +164,46 @@ $(document).ready(function () {
         })().catch(error => console.log('Error:', error));
     });
 
-    $(document).ready(function(){ 
+    $('.prev').click(function() {
         let mounth = $('select[name="mounth"]').val();
         let year = $('select[name="year"]').val();
+        let curDate = new Date(year,mounth-1,1);
+        console.log('getMonth',curDate.getMonth());
+        curDate.setMonth(curDate.getMonth()-1);
+        $('select[name="mounth"]').val(curDate.getMonth()+1);
+        $('select[name="year"]').val(curDate.getFullYear());
         (async () => {
             setSettingAndRender({
-                mounth: mounth,
-                year: year
+                mounth: (curDate.getMonth()+1),
+                year: curDate.getFullYear()
+            });
+        })().catch(error => console.log('Error:', error));
+    });
+
+    $('.next').click(function() {
+        let mounth = $('select[name="mounth"]').val();
+        let year = $('select[name="year"]').val();
+        let curDate = new Date(year,mounth-1,1);
+        console.log('getMonth',curDate.getMonth());
+        curDate.setMonth(curDate.getMonth()+1);
+        $('select[name="mounth"]').val(curDate.getMonth()+1);
+        $('select[name="year"]').val(curDate.getFullYear());
+        (async () => {
+            setSettingAndRender({
+                mounth: (curDate.getMonth()+1),
+                year: curDate.getFullYear()
+            });
+        })().catch(error => console.log('Error:', error));
+    });
+
+    $(document).ready(function(){ 
+        let today = new Date();
+        $('select[name="mounth"]').val(today.getMonth()+1);
+        $('select[name="year"]').val(today.getFullYear());
+        (async () => {
+            setSettingAndRender({
+                mounth: today.getMonth()+1,
+                year: today.getFullYear()
             });
         })().catch(error => console.log('Error:', error));
     });
