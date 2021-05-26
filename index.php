@@ -3,17 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Quick start. Local server-side application with UI</title> 
+    <title>Quick start. Local server-side application with UI</title>
     <script src="/bitrix/js/main/jquery/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="//api.bitrix24.com/api/v1/"></script>
     <script src="bx24-wrapper.js"></script>
     <script src="DataStructure.js?v=2"></script>
     <script src="FilterTasks.js"></script>
-    <script src="https://csn.insystema.ru/app/report.js?v=4"></script>
-    <script src="init.js?v=4"></script>
+    <script src="https://csn.insystema.ru/app/report.js?v=5"></script>
+    <script src="init.js?v=7"></script>
     <link rel="stylesheet" href="./style.css">
-    
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <?php
     require_once(__DIR__ . '/crestcurrent.php');
@@ -30,7 +30,7 @@
 <body>
     <header>
         <a>бургер</a>
-        <button>назад</button>
+        <button class="prev">назад</button>
         <select name="mounth">
             <option value="1">Январь</option>
             <option value="2">Февраль</option>
@@ -45,8 +45,10 @@
             <option value="11">Ноябрь</option>
             <option value="12">Декабрь</option>
         </select>
-        <button>вперед</button>
+        <button class="next">вперед</button>
         <select name="year">
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
             <option value="2021">2021</option>
             <option value="2022">2022</option>
             <option value="2023">2023</option>
