@@ -52,7 +52,7 @@ $(document).ready(function () {
 
             }
         });
-        console.log('taskkGroups', taskkGroups);
+        //console.log('taskkGroups', taskkGroups);
         return taskkGroups;
     }
 
@@ -110,7 +110,7 @@ $(document).ready(function () {
             'UF_AUTO_764963900303', "UF_AUTO_817165109357"
         ]);
         let taskk = await i.getTasks();
-        console.log('taskk', taskk);
+        //console.log('taskk', taskk);
         /* await i.setOption({
             'data': 'value',
             'data2': 'value2',
@@ -125,7 +125,7 @@ $(document).ready(function () {
             },
             'IS_ADMIN': 'Y'
         });
-		console.log('grops', grops);
+		//console.log('grops', grops);
 
         /* await i.getOption(); */
         /* await i.getLists({
@@ -184,7 +184,7 @@ $(document).ready(function () {
         let mounth = $('select[name="mounth"]').val();
         let year = $('select[name="year"]').val();
         let curDate = new Date(year,mounth-1,1);
-        console.log('getMonth',curDate.getMonth());
+        //console.log('getMonth',curDate.getMonth());
         curDate.setMonth(curDate.getMonth()+1);
         $('select[name="mounth"]').val(curDate.getMonth()+1);
         $('select[name="year"]').val(curDate.getFullYear());

@@ -184,7 +184,7 @@ class DataStructure {
         //console.log('params:', params);
 
         let resultLists = await bx24.callListMethod('lists.element.get', params);
-        console.log('resultLists:', resultLists);
+        //console.log('resultLists:', resultLists);
         this._arrLists = resultLists;
 
         return this._arrLists;
@@ -201,7 +201,7 @@ class DataStructure {
         //console.log('params:', params);
 
         let resultLists = await bx24.callListMethod('sonet_group.get', params);
-        console.log('resultLists:', resultLists);
+        //console.log('resultLists:', resultLists);
         this._arrLists = resultLists;
 
         return this._arrLists;

@@ -46,7 +46,7 @@ class ReportTable {
     setData(params) {
         this.tasks = params.tasks;
         this.groups = params.groups;
-        console.log('this', this);
+        //console.log('this', this);
     }
 
     renderReport() {
@@ -132,7 +132,7 @@ class ReportTable {
         } else if (timeTariff && timeTariff - timeDurationFact == 0) {
             progressVal = `data-progress="100"`;
         }
-        console.log('timeTariff', timeTariff);
+        //console.log('timeTariff', timeTariff);
         return `<div data-id="${groupKey}" class="infobar" ${progressVal}>
                     <div class="infobar-label">
                         <span class="label-name">Всего задач</span>
@@ -153,7 +153,7 @@ class ReportTable {
 
     getTbody(groupKey) {
         let arrTasksGroup = this.tasks[groupKey];
-        console.log('arrTasksGroup', arrTasksGroup);
+        //console.log('arrTasksGroup', arrTasksGroup);
         let arrTd = '';
         let objShowFields = this.objShowFields;
         arrTasksGroup.map((task) => {
