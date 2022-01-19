@@ -6,15 +6,15 @@
     <title>Quick start. Local server-side application with UI</title>
     <script src="/bitrix/js/main/jquery/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="//api.bitrix24.com/api/v1/"></script>
+    <script src="https://api.bitrix24.com/api/v1/"></script>
     <script src="bx24-wrapper.js"></script>
     <script src="DataStructure.js?v=2"></script>
     <script src="FilterTasks.js"></script>
-    <script src="https://csn.insystema.ru/app/report.js?v=5"></script>
+    <script src="report.js?v=5"></script>
     <script src="init.js?v=7"></script>
     <link rel="stylesheet" href="./style.css">
 
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <?php
     require_once(__DIR__ . '/crestcurrent.php');
     require_once(__DIR__ . '/getTasks.php');
