@@ -184,7 +184,7 @@ class ReportTable {
                         switch (status) {
                             case '-3':
                                 statusColor = "#fba50b";
-                                td = `<td title="Задача почти просрочена" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                td = `<td title="Задача почти просрочена" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="https://www.w3.org/2000/svg">
                                                         <g class="status">
                                                         <rect class="status56" x="0.5" y="0.5" width="153" height="20" fill="#C4C4C4" stroke="black"/>
                                                         <rect class="status12" x="0.5" y="0.5" width="21" height="20" fill="${statusColor}" stroke="black"/>
@@ -196,7 +196,7 @@ class ReportTable {
                                 break;
                             case '-2':
                                 statusColor = "#efc100";
-                                td = `<td title="Не просмотренная задача" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                td = `<td title="Не просмотренная задача" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="https://www.w3.org/2000/svg">
                                                         <g class="status">
                                                         <rect class="status56" x="0.5" y="0.5" width="153" height="20" fill="#C4C4C4" stroke="black"/>
                                                         <rect class="status12" x="0.5" y="0.5" width="21" height="20" fill="${statusColor}" stroke="black"/>
@@ -208,7 +208,7 @@ class ReportTable {
                                 break;
                             case '-1':
                                 statusColor = "#df412d";
-                                td = `<td title="Задача просрочена" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                td = `<td title="Задача просрочена" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="https://www.w3.org/2000/svg">
                                                         <g class="status">
                                                         <rect class="status56" x="0.5" y="0.5" width="153" height="20" fill="#C4C4C4" stroke="black"/>
                                                         <rect class="status12" x="0.5" y="0.5" width="21" height="20" fill="${statusColor}" stroke="black"/>
@@ -220,7 +220,7 @@ class ReportTable {
                                 break;
                             case '2':
                                 statusColor = "#50ffe6";
-                                td = `<td title="Ждет выполнения" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                td = `<td title="Ждет выполнения" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="https://www.w3.org/2000/svg">
                                                         <g class="status">
                                                         <rect class="status56" x="0.5" y="0.5" width="153" height="20" fill="#C4C4C4" stroke="black"/>
                                                         <rect class="status12" x="0.5" y="0.5" width="21" height="20" fill="${statusColor}" stroke="black"/>
@@ -232,7 +232,7 @@ class ReportTable {
                                 break;
                             case '3':
                                 statusColor = "#0800ff";
-                                td = `<td title="Выполняется" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                td = `<td title="Выполняется" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="https://www.w3.org/2000/svg">
                                                         <g class="status">
                                                         <rect class="status56" x="0.5" y="0.5" width="153" height="20" fill="#C4C4C4" stroke="black"/>
                                                         <rect class="status12" x="0.5" y="0.5" width="21" height="20" fill="${statusColor}" stroke="black"/>
@@ -244,7 +244,7 @@ class ReportTable {
                                 break;
                             case '4':
                                 statusColor = "#4ba984";
-                                td = `<td title="Ожидает контроля" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                td = `<td title="Ожидает контроля" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="https://www.w3.org/2000/svg">
                                                         <g class="status">
                                                         <rect class="status56" x="0.5" y="0.5" width="153" height="20" fill="#C4C4C4" stroke="black"/>
                                                         <rect class="status12" x="0.5" y="0.5" width="21" height="20" fill="${statusColor}" stroke="black"/>
@@ -256,7 +256,7 @@ class ReportTable {
                                 break;
                             case '5':
                                 statusColor = "#00ff10";
-                                td = `<td title="Завершена" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                td = `<td title="Завершена" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="https://www.w3.org/2000/svg">
                                                         <g class="status">
                                                         <rect class="status56" x="0.5" y="0.5" width="153" height="20" fill="${statusColor}" stroke="black"/>
                                                         <rect class="status12" x="0.5" y="0.5" width="21" height="20" fill="${statusColor}" stroke="black"/>
@@ -268,7 +268,7 @@ class ReportTable {
                                 break;
                             case '6':
                                 statusColor = "#C4C4C4";
-                                td = `<td title="Отложена" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                td = `<td title="Отложена" data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="https://www.w3.org/2000/svg">
                                                         <g class="status">
                                                         <rect class="status56" x="0.5" y="0.5" width="153" height="20" fill="${statusColor}" stroke="black"/>
                                                         <rect class="status12" x="0.5" y="0.5" width="21" height="20" fill="${statusColor}" stroke="black"/>
@@ -280,7 +280,7 @@ class ReportTable {
                                 break;
                             default:
                                 statusColor = "#C4C4C4";
-                                td = `<td data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                td = `<td data-status="${status}" data-field="${field}"><svg width="154" height="21" viewBox="0 0 154 21" fill="none" xmlns="https://www.w3.org/2000/svg">
                                                         <g class="status">
                                                         <rect class="status56" x="0.5" y="0.5" width="153" height="20" fill="${statusColor}" stroke="black"/>
                                                         <rect class="status12" x="0.5" y="0.5" width="21" height="20" fill="${statusColor}" stroke="black"/>
